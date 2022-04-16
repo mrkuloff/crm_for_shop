@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+  <section class="window">
+    <div class="container">
+
+      <div class="window__error">
+        <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
+        <img class="window__img-er" src="img/Xred.svg" alt="X">
+        <p class="window__text-er">
+          Что-то пошло не так
+        </p>
+      </div>
+
+      <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
+
+      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+          <h1 class="window__start-world">
+            ДОБАВИТЬ ТОВАР
+          </h1>
+
+        <div class="window__form">
+            <label class="window__text window__name" >
+              <span>НАИМЕНОВАНИЕ</span>
+              <input class="window__boarder" type="text" name="name" required>
+            </label>
+
+            <label class="window__text window__type">
+              КАТЕГОРИЯ
+              <input class="window__boarder" type="text" name="category" required>
+            </label>
+
+            <label class="window__text window__unit">
+              ЕДИНИЦЫ ИЗМЕРЕНИЯ
+              <input class="window__boarder" type="text" name="unit" required>
+            </label>
+
+            <div class="window__discount">
+              <p class="window__text ">ДИСКОНТ</p>
+              <label class="window__checkbox-style window__block-discount ">
+                <input class="window__checkbox" type="checkbox" name="discount">
+              </label>
+
+              <label>
+                <input class="window__block-discount window__checkbox_number" type="number" name="discount" id="discount">
+              </label>
+            </div>
+
+
+            <label class="window__text window__text-description window__description" >
+              ОПИСАНИЕ
+              <textarea class="window__boarder_description" name="description"></textarea>
+            </label>
+
+            <label class="window__text window__number">
+              КОЛИЧЕСТВО
+              <input class="window__boarder" type="number" name="quantity">
+            </label>
+
+            <label class="window__text window__price" >
+              ЦЕНА
+              <input class="window__boarder" type="number" name="price">
+            </label>
+
+          <p class="window__error-text">
+            <span>Изображение не должно</span>
+            <span>превышать размер 1 Мб</span>
+          </p>
+
+          <label class="window__add-photo window__photo">
+            <input class="window__file" type="file" name="add" value="Добавить изображение">
+            Добавить изображение
+          </label>
+
+        </div>
+
+        <div class="window__footer">
+          <p class="window__text-footer">
+          Итоговая стоимость: <span>$ 900.00</span>
+          </p>
+
+          <input class="window__add" type="submit" name="add" value="Добавить товар">
+        </div>
+      </form>
+    </div>
+    </section>
+  </main>
+</body>
+</html>
