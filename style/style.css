@@ -1,23 +1,32 @@
 @import "../style/global_style.css";
 @import "../style/normalize.css";
 
+
 /*
 ЭКРАН ДОБАВИТЬ ТОВАР
  */
 .window__add-goods {
-  display: none;
+  display: block;
   position: absolute;
   z-index: 8000;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*
 ЭКРАН ИЗМЕНИТЬ ТОВАР
  */
 .window__edit-goods {
-  display: block;
+  display: none;
 
   position: absolute;
   z-index: 8000;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*
@@ -87,7 +96,7 @@ CRM-ка
   grid-template-rows: 60px 60px 60px 60px 60px;
   gap: 12px 24px;
 
-  min-width: 580px;
+  width: 580px;
   min-height: 403px;
 
 
