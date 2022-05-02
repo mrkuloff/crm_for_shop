@@ -21,30 +21,31 @@ const getRandomInt = (n, m) => {
 
 const writeNumber = () => {
   let userNumber = prompt("enter", 50);
-  if (Number.isInteger(userNumber)) {
+  if (!Number.isNaN(userNumber)) {
+    console.log('userNumber', userNumber);
     return userNumber;
   } else {
     console.log(`please try next`);
   }
 }
 
+let randomNumber = getRandomInt(1,100);
+console.log('randomNumber', randomNumber);
 
 const game = () => {
-  let randomNumber = getRandomInt();
   let number = writeNumber();
+  console.log('number', number);
 
-  while (number != randomNumber) {
     if (number > randomNumber) {
       console.log('Меньше!');
-      number = writeNumber();
+      game();
     } else if (number < randomNumber) {
       console.log('Больше!');
-      number = writeNumber();
+      game();
     } else if (number == randomNumber) {
       console.log('Правильно');
     }
-  }
 }
 
-console.log(game());
+game();
 
