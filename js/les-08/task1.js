@@ -85,50 +85,51 @@ print()
  */
 
 const cart = {
-  const items: `[]`,
+  let items: Array,
   let totalPrice: `0`,
   let count: `0`,
-},
 
   let getTotalPrice = () => {
-    return this.totalPrice;
-  },
+  return this.totalPrice;
+},
 
   let add = (name, this.price, this.count == 1) => {
-    increaseCount(count);
-    calculateItemPrice();
+  increaseCount(count);
+  calculateItemPrice();
+},
 
-    let item {
-      name,
+  let item {
+    name,
       price,
       count,
-    }
+  }
 
-    return this.items.push(item);
-  },
+  return this.items.push(item);
+},
 
-  let increaseCount  = (number) => {
+let increaseCount  = (number) => {
     return this.count += number;
   },
 
   let calculateItemPrice  = () => {
-      let length = this.items.length;
-      let newCount = this.count;
-      let newTotalPrice = length * newCount;
-      return newTotalPrice;
-  },
+  let length = this.items.length;
+  let newCount = this.count;
+  let newTotalPrice = length * newCount;
+  return newTotalPrice;
+},
 
   let clear   = () => {
-    return this.items.removeAllRanges() ;
-    },
+  return this.items.removeAllRanges() ;
+},
 
   let print = () => {
-    const aboutItems = JSON.stringify(this.items);
-    console.log(`json: ,` aboutItems);
-    console.log(`totalPrice: ,` getTotalPrice());
-  },
+  const aboutItems = JSON.stringify(this.items);
+  console.log(`json: ,` aboutItems);
+  console.log(`totalPrice: ,` getTotalPrice());
+},
+};
 
-}
+
 
 card.add('Масло', 80, 2);
 card.add('Квас', 100, 3);
