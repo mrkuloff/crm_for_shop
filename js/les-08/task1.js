@@ -89,10 +89,6 @@ const cart = {
   totalPrice: `0`,
   count: `0`,
 
-  getTotalPrice() {
-  return this.totalPrice;
-  },
-
   add(name, price, count) {
   increaseCount(count);
   calculateItemPrice();
@@ -127,6 +123,16 @@ const cart = {
   console.log(`totalPrice: ,` getTotalPrice());
   },
 };
+
+Object.defineProperty(cart, `totatPrice`, {
+  get() {
+    return this.calculateItemPrice();
+  }
+
+  get calculateItemPrice() {
+    return this.calculateItemPrice();
+  }
+});
 
 
 
