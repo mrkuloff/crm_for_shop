@@ -85,48 +85,47 @@ print()
  */
 
 const cart = {
-  let items: Array,
-  let totalPrice: `0`,
-  let count: `0`,
+  items: [],
+  totalPrice: `0`,
+  count: `0`,
 
-  let getTotalPrice = () => {
+  getTotalPrice() {
   return this.totalPrice;
-},
+  },
 
-  let add = (name, this.price, this.count == 1) => {
+  add(name, price, count) {
   increaseCount(count);
   calculateItemPrice();
-},
 
-  let item {
-    name,
-      price,
-      count,
-  }
+  item {
+      name: this.name,
+      price: this.price,
+      count: this.count,
+  },
 
   return this.items.push(item);
-},
+  },
 
-let increaseCount  = (number) => {
+  increaseCount(number) {
     return this.count += number;
   },
 
-  let calculateItemPrice  = () => {
+  calculateItemPrice() {
   let length = this.items.length;
   let newCount = this.count;
   let newTotalPrice = length * newCount;
   return newTotalPrice;
-},
+  },
 
-  let clear   = () => {
+  clear() {
   return this.items.removeAllRanges() ;
-},
+  },
 
-  let print = () => {
+  print() {
   const aboutItems = JSON.stringify(this.items);
   console.log(`json: ,` aboutItems);
   console.log(`totalPrice: ,` getTotalPrice());
-},
+  },
 };
 
 
