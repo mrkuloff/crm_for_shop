@@ -89,6 +89,16 @@ const cart = {
   totalPrice: `0`,
   count: `0`,
 
+  get totalPrice() {
+    return this.calculateItemPrice();
+  }
+
+  /*
+  get calculateItemPrice() {
+    return this.calculateItemPrice();
+  }
+   */
+
   add(name, price, count) {
   increaseCount(count);
   calculateItemPrice();
@@ -123,17 +133,6 @@ const cart = {
   console.log(`totalPrice: ,` getTotalPrice());
   },
 };
-
-Object.defineProperty(cart, `totatPrice`, {
-  get() {
-    return this.calculateItemPrice();
-  }
-
-  get calculateItemPrice() {
-    return this.calculateItemPrice();
-  }
-});
-
 
 
 card.add('Масло', 80, 2);
