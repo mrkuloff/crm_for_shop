@@ -91,7 +91,7 @@ const cart = {
 
   get totalPrice() {
     return this.calculateItemPrice();
-  }
+  },
 
   /*
   get calculateItemPrice() {
@@ -103,11 +103,11 @@ const cart = {
   increaseCount(count);
   calculateItemPrice();
 
-  item {
+  item, {
       name: this.name,
       price: this.price,
       count: this.count,
-  },
+  }
 
   return this.items.push(item);
   },
@@ -117,9 +117,9 @@ const cart = {
   },
 
   calculateItemPrice() {
-  let length = this.items.length;
-  let newCount = this.count;
-  let newTotalPrice = length * newCount;
+  const length = this.items.length;
+  const newCount = this.count;
+  const newTotalPrice = length * newCount;
   return newTotalPrice;
   },
 
@@ -129,13 +129,13 @@ const cart = {
 
   print() {
   const aboutItems = JSON.stringify(this.items);
-  console.log(`json: ,` aboutItems);
-  console.log(`totalPrice: ,` getTotalPrice());
+  console.log(`json: , ${aboutItems}`);
+  console.log(`totalPrice: , ${getTotalPrice()}`);
   },
 };
 
 
-card.add('Масло', 80, 2);
-card.add('Квас', 100, 3);
-card.add('Хлем', 45, 1);
-card.print();
+cart.add('Масло', 80, 2);
+cart.add('Квас', 100, 3);
+cart.add('Хлем', 45, 1);
+cart.print();
