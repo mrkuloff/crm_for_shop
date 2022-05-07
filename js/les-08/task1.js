@@ -93,21 +93,11 @@ const cart = {
     return this.calculateItemPrice();
   },
 
-  /*
-  get calculateItemPrice() {
-    return this.calculateItemPrice();
-  }
-   */
-
   add(name, price, count) {
-  increaseCount(count);
-  calculateItemPrice();
+  this.increaseCount(count);
+  this.calculateItemPrice();
 
-  item, {
-      name: this.name,
-      price: this.price,
-      count: this.count,
-  }
+  const item = {name, price,count}
 
   return this.items.push(item);
   },
@@ -130,7 +120,7 @@ const cart = {
   print() {
   const aboutItems = JSON.stringify(this.items);
   console.log(`json: , ${aboutItems}`);
-  console.log(`totalPrice: , ${getTotalPrice()}`);
+  console.log(`totalPrice: , ${this.totalPrice}`);
   },
 };
 
