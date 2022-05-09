@@ -1,16 +1,20 @@
 'use strict';
-/*1 задача в прошлом уроке*/
+/* 1 задача в прошлом уроке*/
 
 const countRepeat = (array) => {
   console.log(array.length);
 
-  let mySet = new Set();
+  const mySet = new Set();
   for (const numb of array) {
     mySet.add(numb);
   }
 
   return mySet.size;
-}
+};
+
+const array = [1, 2, 2];
+
+console.log(countRepeat(array));
 
 /*
 *
