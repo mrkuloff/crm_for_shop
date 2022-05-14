@@ -4,9 +4,18 @@ const cart = {
   items: [],
   totalPrice: `0`,
   count: `0`,
+  discount: `0`,
 
   get toPrice() {
     return this.calculateItemPrice();
+  },
+
+  set setDiscount(promocode) {
+    if (typeof promocode === 'string' && promocode==='METHED') {
+      return this.discount+=15;
+    } else if (typeof promocode === 'string' && promocode==='NEWYEAR') {
+      return this.discount+=10;
+    }
   },
 
   add(name, price, count) {
@@ -25,7 +34,7 @@ const cart = {
   calculateItemPrice() {
     const length = this.items.length;
     const newCount = this.count;
-    const newTotalPrice = length * newCount;
+    const newTotalPrice = length * newCount - (this.discount/100);
     return newTotalPrice;
   },
 
@@ -44,4 +53,5 @@ const cart = {
 cart.add('Масло', 80, 2);
 cart.add('Квас', 100, 3);
 cart.add('Хлем', 45, 1);
+cart.setDiscount = 'METHED';
 cart.print();
