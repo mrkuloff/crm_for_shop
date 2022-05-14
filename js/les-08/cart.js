@@ -11,10 +11,10 @@ const cart = {
   },
 
   set setDiscount(promocode) {
-    if (typeof promocode === 'string' && promocode==='METHED') {
-      return this.discount+=15;
-    } else if (typeof promocode === 'string' && promocode==='NEWYEAR') {
-      return this.discount+=10;
+    if (typeof promocode === 'string' && promocode === 'METHED') {
+      this.discount += 15;
+    } else if (typeof promocode === 'string' && promocode === 'NEWYEAR') {
+      this.discount += 10;
     }
   },
 
@@ -34,7 +34,7 @@ const cart = {
   calculateItemPrice() {
     const length = this.items.length;
     const newCount = this.count;
-    const newTotalPrice = length * newCount - (this.discount/100);
+    const newTotalPrice = length * newCount - (this.discount / 100);
     return newTotalPrice;
   },
 
