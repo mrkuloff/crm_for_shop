@@ -1,5 +1,7 @@
 'use strict';
 
+let count = 0;
+
 (() => {
   const getRandomIntInclusive = (min, max) => {
     min = Math.ceil(min);
@@ -9,9 +11,7 @@
 
   const FIGURES_RUS = ['камень', 'ножницы', 'бумага', 'Компьютер: ', 'Игрок: ', 'Ничья', 'Победил игрок', 'Победил ПК', 'Продолжаем!!!!', 'Хотите еще сыграть?'];
 
-  let count = 0;
-
-  const getRandomFigureOfPC = (lang) => FIGURES_RUS[getRandomIntInclusive(0, 2)];
+  const getRandomFigureOfPC = () => FIGURES_RUS[getRandomIntInclusive(0, 2)];
 
   const getMessageFromUser = (message) => FIGURES_RUS.find(item => item.includes(message));
 
@@ -29,7 +29,7 @@
       console.log(getSign(messagePC) + ' ' + getSign(messageUser));
       resultRPS.computer += 1;
       resultRPS.player += 1;
-      if (resultMessage(lang)) {
+      if (resultMessage()) {
         RPS(resultRPS);
       } else (
         RPS(resultRPS)
@@ -42,7 +42,7 @@
     } else {
       alert(FIGURES_RUS[3] + messagePC + '\n' + FIGURES_RUS[4] + messageUser + '\n' + FIGURES_RUS[7]);
       console.log(getSign(messagePC) + ' ' + getSign(messageUser));
-      reresultRPSsult.computer += 1;
+      resultRPS.computer += 1;
       count++;
     }
   };
@@ -67,21 +67,24 @@
     };
 
     return function start() {
-      RPS(resultRPS);
+
+      let ballUser = 0;
+      let ballBot = 0;
 
       if (count > 0) {
         if (resultRPS.player > resultRPS.computer) {
-          const ball = prompt('Загадайте число');
-          const ballUser = getRandomIntInclusive(1, result.player);
-          const ballBot = getRandomIntInclusive(1, result.bot);
+          ballUser = Number(prompt('Загадайте число до ' + result.player));
+          ballBot = getRandomIntInclusive(1, result.bot);
+          alert('Бот загадал ' + ballBot);
         } else {
-          const ballBot = getRandomIntInclusive(1, result.bot);
-          const ball = prompt('Загадайте число');
-          const ballUser = getRandomIntInclusive(1, result.player);
+          ballBot = getRandomIntInclusive(1, result.bot);
+          ballUser = Number(prompt('Бот загадал ' + ballBot + ', ваша очередь Загадайте число до ' + result.player));
         }
+      } else {
+        RPS(resultRPS);
       }
 
-      const evenOrOdd = prompt('Четное или нечетное число у бота');
+      const evenOrOdd = Number(prompt('Четное или нечетное число у бота'));
       if (evenOrOdd % 2 === 0) {
         result.player+=ballBot;
       } else {
@@ -98,14 +101,21 @@
 
       if (result.bot===0 || result.player===0) {
         if (result.bot > result.player) {
-          alert('Победил бот');
-          if (resultMessageMarble(lang)) {
+          alert('Победил бот. Счет игрок: ' + result.player + '. Бот:' + result.bot);
+          if (resultMessageMarble()) {
+            count === 0;
             start();
           } else {
             alert('Результат:\nПК:' + result.bot + '\n' + 'Вы:' + result.player);
           }
         } else {
-          alert('Победил игрок');
+          alert('Победил игрок. Счет игрок: ' + result.player + '. Бот:' + result.bot);
+          if (resultMessageMarble()) {
+            count === 0;
+            start();
+          } else {
+            alert('Результат:\nПК:' + result.bot + '\n' + 'Вы:' + result.player);
+          }
         }
       } else {
         start();
